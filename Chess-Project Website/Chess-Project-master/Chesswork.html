@@ -1,0 +1,197 @@
+<html>
+<head>
+   <link rel="stylesheet" href="styles.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div>
+    <table align="center" style="border: 1px solid black; font-family:verdana; font-size:11px">
+        <colgroup>
+            <col width="100px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="40px" />
+            <col width="75px" />
+        </colgroup>
+        <tr>
+            <td id="Trials" colspan="10" style="text-align:center; font-weight:bold; border-bottom: 2px solid black">Total Trials</td>
+
+        </tr>
+        <tr>
+            <td class="tdResultHeader">Queens</td>
+            <td class="tdResultHeader">Q1</td>
+            <td class="tdResultHeader">Q2</td>
+            <td class="tdResultHeader">Q3</td>
+            <td class="tdResultHeader">Q4</td>
+            <td class="tdResultHeader">Q5</td>
+            <td class="tdResultHeader">Q6</td>
+            <td class="tdResultHeader">Q7</td>
+            <td class="tdResultHeader">Q8</td>
+            <td class="tdResultHeader" style="border-left: 2px solid black">Results</td>
+        </tr>
+        <tr>
+            <td >Rows</td>
+            <td id="QR1"></td>
+            <td id="QR2"></td>
+            <td id="QR3"></td>
+            <td id="QR4"></td>
+            <td id="QR5"></td>
+            <td id="QR6"></td>
+            <td id="QR7"></td>
+            <td id="QR8"></td>
+            <td style="border-left: 2px solid black" id="SC"></td>   <!-- solution count -->
+        </tr>
+        <tr>
+            <td >Columns</td>
+            <td id="QC1"></td>
+            <td id="QC2"></td>
+            <td id="QC3"></td>
+            <td id="QC4"></td>
+            <td id="QC5"></td>
+            <td id="QC6"></td>
+            <td id="QC7"></td>
+            <td id="QC8"></td>
+            <td style="border-left: 2px solid black" id="TC"></td>   <!--trial count -->
+        </tr>
+        <tr>
+
+            <td colspan="10" style="text-align: center;border-top: 2px solid black"><input id="EightQueens" type="button" value="Eight Queens" /></td>
+
+        </tr>
+    </table>
+  </div>
+<!--
+    <input id="hide_button" type="button" value="Hide All Queens" />
+    <input id="show_button" type="button" value="Show All Queens" />
+    <input id="place_button" type="button" value="Place Queens"  />
+     Queen Row:<input id= "QR" type="input" size= "5" value= ""/>
+     Queen Column:<input id= "QC" type="input" size= "5" value= ""/>
+-->
+    <table width="800px" height="810px" align="center" border="1px solid black" margin="0px">
+
+        <tr id="row1">
+            <td class="RowHeader"> </td>
+            <td class="ColHeader">1</td>
+            <td class="ColHeader">2</td>
+            <td class="ColHeader">3</td>
+            <td class="ColHeader">4</td>
+            <td class="ColHeader">5</td>
+            <td class="ColHeader">6</td>
+            <td class="ColHeader">7</td>
+            <td class="ColHeader">8</td>
+
+        </tr>
+        <tr>
+            <td class="RowHeader"> 1 </td>
+            <td id="C11" class="WhiteCell"><img id="Q11" src="images//Queen-Yellow-icon-16.png" /></td>
+            <td id="C12" class="BlackCell"><img id="Q12" src="images//Queen-Yellow-icon-16.png" /></td>
+            <td id="C13" class="WhiteCell"><img id="Q13" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C14" class="BlackCell"><img id="Q14" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C15" class="WhiteCell"><img id="Q15" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C16" class="BlackCell"><img id="Q16" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C17" class="WhiteCell"><img id="Q17" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C18" class="BlackCell"><img id="Q18" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+        <tr>
+            <td class="RowHeader"> 2</td>
+            <td id="C21" class="BlackCell"><img id="Q21" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C22" class="WhiteCell"><img id="Q22" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C23" class="BlackCell"><img id="Q23" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C24" class="WhiteCell"><img id="Q24" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C25" class="BlackCell"><img id="Q25" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C26" class="WhiteCell"><img id="Q26" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C27" class="BlackCell"><img id="Q27" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C28" class="WhiteCell"><img id="Q28" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+
+        <tr>
+            <td class="RowHeader"> 3</td>
+            <td id="C31"  class="WhiteCell"><img id="Q31" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C32"  class="BlackCell"><img id="Q32" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C33"  class="WhiteCell"><img id="Q33" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C34"  class="BlackCell"><img id="Q34" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C35"  class="WhiteCell"><img id="Q35" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C36"  class="BlackCell"><img id="Q36" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C37"  class="WhiteCell"><img id="Q37" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C38"  class="BlackCell"><img id="Q38" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+        <tr>
+            <td class="RowHeader"> 4</td>
+            <td id="C41"  class="BlackCell"><img id="Q41" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C42"  class="WhiteCell"><img id="Q42" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C43"  class="BlackCell"><img id="Q43" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C44"  class="WhiteCell"><img id="Q44" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C45"  class="BlackCell"><img id="Q45" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C46"  class="WhiteCell"><img id="Q46" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C47"  class="BlackCell"><img id="Q47" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C48"  class="WhiteCell"><img id="Q48" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+
+        <tr>
+            <td class="RowHeader"> 5</td>
+            <td id="C51"  class="WhiteCell"><img id="Q51" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C52"  class="BlackCell"><img id="Q52" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C53"  class="WhiteCell"><img id="Q53" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C54"  class="BlackCell"><img id="Q54" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C55"  class="WhiteCell"><img id="Q55" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C56"  class="BlackCell"><img id="Q56" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C57"  class="WhiteCell"><img id="Q57" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C58"  class="BlackCell"><img id="Q58" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+        <tr>
+            <td class="RowHeader"> 6</td>
+            <td  id="C61" class="BlackCell"><img id="Q61" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C62" class="WhiteCell"><img id="Q62" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C63" class="BlackCell"><img id="Q63" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C64" class="WhiteCell"><img id="Q64" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C65" class="BlackCell"><img id="Q65" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C66" class="WhiteCell"><img id="Q66" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C67" class="BlackCell"><img id="Q67" src="images//Queen-Yellow-icon-16.png" /></td>
+            <td  id="C68" class="WhiteCell"><img id="Q68" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+
+        <tr>
+            <td class="RowHeader"> 7</td>
+            <td  id="C71" class="WhiteCell"><img id="Q71" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C72" class="BlackCell"><img id="Q72" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C73" class="WhiteCell"><img id="Q73" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C74" class="BlackCell"><img id="Q74" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C75" class="WhiteCell"><img id="Q75" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td  id="C76" class="BlackCell"><img id="Q76" src="images//Queen-Yellow-icon-16.png" /></td>
+            <td  id="C77" class="WhiteCell"><img id="Q77" src="images//Queen-Yellow-icon-16.png" /></td>
+            <td  id="C78" class="BlackCell"><img id="Q78" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+        <tr>
+            <td class="RowHeader"> 8</td>
+            <td id="C81"  class="BlackCell"><img id="Q81" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C82"  class="WhiteCell"><img id="Q82" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C83"  class="BlackCell"><img id="Q83" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C84"  class="WhiteCell"><img id="Q84" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C85"  class="BlackCell"><img id="Q85" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C86"  class="WhiteCell"><img id="Q86" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C87"  class="BlackCell"><img id="Q87" src="images//Queen-Yellow-icon-16.png" /> </td>
+            <td id="C88"  class="WhiteCell"><img id="Q88" src="images//Queen-Yellow-icon-16.png" /> </td>
+        </tr>
+        <!-- -->
+    </table>
+    <p id="result">Current Result is </p>
+
+</body>
+<script src ="chess.js"></script>
+
+
+</html>
